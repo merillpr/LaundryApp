@@ -2,30 +2,28 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
-import Splash from "../pages/Splash";
-import Home from "../pages/Home";
-import Account from "../pages/Account";
-import Order from "../pages/Order";
+import * as Pages from "../pages";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const MainApp = () => {
+  
   return (
     <Tab.Navigator>
       <Tab.Screen
         name="Home"
-        component={Home}
+        component={Pages.Home}
         options={{ headerShown: false }}
       />
       <Tab.Screen
         name="Order"
-        component={Order}
+        component={Pages.Order}
         options={{ headerShown: false }}
       />
       <Tab.Screen
         name="Account"
-        component={Account}
+        component={Pages.Account}
         options={{ headerShown: false }}
       />
     </Tab.Navigator>
@@ -34,10 +32,10 @@ const MainApp = () => {
 
 const Router = () => {
   return (
-    <Stack.Navigator initialRouteName="MainApp">
+    <Stack.Navigator initialRouteName="Splash">
       <Stack.Screen
         name="Splash"
-        component={Splash}
+        component={Pages.Splash}
         options={{ headerShown: false }}
       />
       <Stack.Screen
