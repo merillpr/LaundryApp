@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View} from 'react-native'
 import React from 'react'
 
 const Order = () => {
@@ -6,7 +6,7 @@ const Order = () => {
     <View>
       <Text>Order</Text>
     </View>
-  )
+  );
 }
 
 export default Order
