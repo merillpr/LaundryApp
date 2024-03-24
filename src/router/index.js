@@ -3,6 +3,7 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import * as Pages from "../pages";
+import * as Components from "../components";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -11,7 +12,9 @@ const MainApp = () => {
   return (
     <>
       <StatusBar backgroundColor="#ffffff" barStyle={"dark-content"} />
-      <Tab.Navigator>
+      <Tab.Navigator
+        tabBar={(props) => <Components.BottomNavigator {...props} />}
+      >
         <Tab.Screen
           name="Home"
           component={Pages.Home}
